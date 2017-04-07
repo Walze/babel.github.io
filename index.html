@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                font-family: monospace;
+                font-size: 200px;
+                color: #333;
+            }
+            
+            body {
+                background: #eee;
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1 id="esse"></h1>
+        
+        
+        <script>
+            function getRandomword() {
+            var con = 'bcdfghjklmnpqrstvwxyz';
+            var con2 = '';
+            var con3 = 'rtysdfhjklzxcvnm';
+            var con4 = '';
+            var vow = 'aeiou';
+            var vow2 = '';
+            var word = '';
+            var tamanho = Math.floor(Math.random() * 4) + 2;
+               
+            for (var i = 0; i < tamanho; i++ ) {
+                var n1 = Math.floor(Math.random() * 10);
+                var n2 = Math.floor(Math.random() * 7);
+                var vow3 = vow[Math.floor(Math.random() * 5)];
+                con2 = con[Math.floor(Math.random() * 21)];
+                con4 = con3[Math.floor(Math.random() * 16)];
+                vow2 = vow[Math.floor(Math.random() * 5)];
+                
+                if (con2 === 'q') {
+                    con2 += 'u';
+                }
+                function rOUi() {
+                    if (n2 == 2 && con2 != 'z' && con2 != 'h' && con2 != 'n' && con2 != 'x' && con2 != 's' && con2 != 'w' && con2 != 'c' && con2 != 'l' && con2 != 'm' && con2 != 'v') {
+                        return "r";
+                    }else if (n1 == 7) {
+                        return vow3;
+                    }else {
+                        return '';
+                    }
+                }
+                function hCOMsOUc() {
+                    if (tamanho == 2 && con2 === 'c') {
+                        return 'h';
+                    }else if (tamanho == 2 && con2 === 's'){
+                        return 'h';
+                    }else {
+                        return '';
+                    }
+                }
+                if (Math.floor(Math.random() * 3) + 1 == 3 || tamanho == 1) {
+                    word += con2 + hCOMsOUc() + rOUi() + vow2 + con4;
+                }else {
+                    word += con2 + hCOMsOUc() + rOUi() + vow2;
+                }   
+            }
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+            return capitalizeFirstLetter(word);
+        }
+        document.getElementById('esse').innerHTML = getRandomword();
+            
+        </script>
+    </body>
+</html>
